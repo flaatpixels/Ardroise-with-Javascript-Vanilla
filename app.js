@@ -32,7 +32,7 @@ let isClear = false;
  * Width of the line
  * @type {Number}
  */
-let lineWidth = 50;
+let lineWidth = 25;
 
 // Make canva take the whole size of the screen
 canvas.width = window.innerWidth;
@@ -96,10 +96,9 @@ function removeTrait(x, y){
 // When double click
 // Trigger the color picker
 window.addEventListener('dblclick', (e) =>{
-  if(!isClear){
-    e.preventDefault();
-    color.click();
-  }
+  console.log(e);
+  e.preventDefault();
+  color.click();
 });
 
 window.addEventListener('contextmenu', (e) => e.preventDefault());
@@ -122,7 +121,6 @@ window.addEventListener('mouseup', (e) => {
 
 // Trace or clear while moving the mouse
 window.addEventListener('mousemove', (e) => {
-
   if(isDraw){
     buildTrait(e.offsetX, e.offsetY);
   }
